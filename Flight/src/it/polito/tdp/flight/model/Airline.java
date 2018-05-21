@@ -1,5 +1,7 @@
 package it.polito.tdp.flight.model;
 
+import java.util.*;
+
 public class Airline {
 
 	private int airlineId;
@@ -10,6 +12,7 @@ public class Airline {
 	private String callsign;
 	private String country;
 	private String active;
+	private List<Route> routes;
 
 	public Airline(int airlineId, String name, String alias, String iata, String icao, String callsign, String country,
 			String active) {
@@ -22,6 +25,7 @@ public class Airline {
 		this.callsign = callsign;
 		this.country = country;
 		this.active = active;
+		this.routes = new ArrayList<Route>();
 	}
 
 	public int getAirlineId() {
@@ -86,6 +90,14 @@ public class Airline {
 
 	public void setActive(String active) {
 		this.active = active;
+	}
+		
+	public List<Route> getRoutes() {
+		return routes;
+	}
+
+	public void setRoutes(List<Route> routes) {
+		this.routes = routes;
 	}
 
 	@Override
